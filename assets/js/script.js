@@ -5,7 +5,7 @@ quiz = [
         option2: "possible answer 2",
         option3: "possible answer 3",
         option4: "possible answer 4",
-        answer: 3,        
+        answer: 3,
     },
     {
         question: "where was tattoi filmed in starwars",
@@ -13,7 +13,7 @@ quiz = [
         option2: "tunisia",
         option3: "possible answer 3",
         option4: "possible answer 4",
-        answer: 2,        
+        answer: 2,
     },
     {
         question: "what vegetable lasted longer than liz truss",
@@ -21,7 +21,7 @@ quiz = [
         option2: "possible answer 2",
         option3: "lettuce",
         option4: "possible answer 4",
-        answer: 3,        
+        answer: 3,
     },
     {
         question: "This is question 1",
@@ -29,7 +29,7 @@ quiz = [
         option2: "possible answer 2",
         option3: "possible answer 3",
         option4: "possible answer 4",
-        answer: 3,        
+        answer: 3,
     },
     {
         question: "This is question 1",
@@ -51,7 +51,7 @@ function timer() {
     var timeLeft = 100;
 
     var timeInterval = setInterval(function () {
-        timeLeft --;
+        timeLeft--;
         timerEl.textContent = timeLeft + "seconds";
 
         if (timeLeft === 0) {
@@ -74,6 +74,37 @@ function hideMenu() {
 
 
 //ask questions
+var questions = document.querySelector("#questions");
+var questionTitle = document.querySelector("#title");
+var choicesList = document.querySelector("#choices");
+
+choicesList.textContent = '';
+
+
+
+
+// quiz.question.forEach(askQuestion)
+
+// function askQuestion(i) {
+//     alert(quiz.children[i].question);
+// }
+let options = function () {
+    for (var i = 0; i < quiz.children[1].length; i++) {
+        let element = document.createElement("li");
+        element.innerHTML = quiz.children[1].children[i];
+        alert(element);
+        choicesList.appendChild(element);
+
+
+    }
+}
+
+
+
+
+
+
+
 
 
 
@@ -83,11 +114,11 @@ function hideMenu() {
 //start button press
 var startButton = document.querySelector('#start');
 
-startButton.addEventListener("click", function() {
+startButton.addEventListener("click", function () {
     alert("quiz started");
     timer();
     hideMenu();
-
+    options();
 
 })
 
