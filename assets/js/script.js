@@ -88,15 +88,28 @@ choicesList.textContent = '';
 // function askQuestion(i) {
 //     alert(quiz.children[i].question);
 // }
-let options = function () {
-    for (var i = 0; i < quiz.children[1].length; i++) {
-        let element = document.createElement("li");
-        element.innerHTML = quiz.children[1].children[i];
-        alert(element);
-        choicesList.appendChild(element);
 
 
+// let options = function () {
+//     for (var i = 0; i < quiz.children[1].length; i++) {
+//         let element = document.createElement("li");
+//         element.innerHTML = quiz.children[1].children[i];
+//         alert(element);
+//         choicesList.appendChild(element);
+
+
+//     }
+// }
+
+
+function createList(array) {
+    var list = document.createElement("ul");
+    for (var i = 0; i < array.length; i++) {
+        var item = document.createElement("li");
+        item.innerHTML = array[i].option + [i];
+        list.appendChild(item);
     }
+    return list;
 }
 
 
@@ -118,8 +131,9 @@ startButton.addEventListener("click", function () {
     alert("quiz started");
     timer();
     hideMenu();
-    options();
-
+    // options();
+    var list = createList(quiz);
+    document.body.appendChild(list);
 })
 
 
