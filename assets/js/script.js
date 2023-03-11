@@ -52,11 +52,11 @@ function hideMenu() {
 //ask questions
 choicesList.textContent = '';
 
-function createList(array) {
+function createList(array, i) {
     var list = document.createElement("ul");
-    for (var i = 0; i < array.length; i++) {
+    for (var j = 0; j < array[i].options.length; j++) {
         var item = document.createElement("li");
-        item.innerHTML = array[i].option + [i];
+        item.innerHTML = array[i].options[j];
         list.appendChild(item);
     }
     return list;
@@ -72,8 +72,13 @@ startButton.addEventListener("click", function () {
     // alert("quiz started");
     timer(); // starts timer
     hideMenu(); //hides first menu screen
-    var list = createList(quiz);
-    document.body.appendChild(list);
+    console.log(quiz.length)
+    //now ask all questions in quiz array
+    for (var i = 0; i < quiz.length; i++) {
+        var list = createList(quiz, i);
+        document.body.appendChild(list);
+    }
+
 })
 
 
