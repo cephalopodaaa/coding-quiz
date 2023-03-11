@@ -1,44 +1,15 @@
 quiz = [
     {
-        question: "This is question 1",
-        option1: "possible answer 1",
-        option2: "possible answer 2",
-        option3: "possible answer 3",
-        option4: "possible answer 4",
-        answer: 3,
+        question: "which language is primarily used to style web-pages",
+        options: ["HTML","CSS","Javascript", "Markdown"],
+        answer: "CSS"
     },
     {
-        question: "where was tattoi filmed in starwars",
-        option1: "possible answer 1",
-        option2: "tunisia",
-        option3: "possible answer 3",
-        option4: "possible answer 4",
-        answer: 2,
-    },
-    {
-        question: "what vegetable lasted longer than liz truss",
-        option1: "possible answer 1",
-        option2: "possible answer 2",
-        option3: "lettuce",
-        option4: "possible answer 4",
-        answer: 3,
-    },
-    {
-        question: "This is question 1",
-        option1: "possible answer 1",
-        option2: "possible answer 2",
-        option3: "possible answer 3",
-        option4: "possible answer 4",
-        answer: 3,
-    },
-    {
-        question: "This is question 1",
-        option1: "possible answer 1",
-        option2: "possible answer 2",
-        option3: "possible answer 3",
-        option4: "possible answer 4",
-        answer: 3,
+        question: "how many people wrote the Javascript language",
+        options: ["1","3","7", "42"],
+        answer: "1"
     }
+
 ]
 
 // F U N C T I O N S
