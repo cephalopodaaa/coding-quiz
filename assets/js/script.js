@@ -12,15 +12,25 @@ quiz = [
 
 ]
 
-// F U N C T I O N S
 
-//timer
+// HTML E L E M E N T S
 var timerEl = document.querySelector('#time');
-var mainEl = document.getElementById("main");
 
+var questions = document.querySelector("#questions");
+var questionTitle = document.querySelector("#title");
+var choicesList = document.querySelector("#choices");
+
+var startScreen = document.querySelector('#start-screen');
+var startButton = document.querySelector('#start');
+
+
+
+
+
+// F U N C T I O N S
+//timer
 function timer() {
     var timeLeft = 100;
-
     var timeInterval = setInterval(function () {
         timeLeft--;
         timerEl.textContent = timeLeft + "seconds";
@@ -33,45 +43,14 @@ function timer() {
 }
 
 
-
-
 //hide start menu
-var startScreen = document.querySelector('#start-screen');
-
 function hideMenu() {
     startScreen.style.display = 'none';
 }
 
 
-
 //ask questions
-var questions = document.querySelector("#questions");
-var questionTitle = document.querySelector("#title");
-var choicesList = document.querySelector("#choices");
-
 choicesList.textContent = '';
-
-
-
-
-// quiz.question.forEach(askQuestion)
-
-// function askQuestion(i) {
-//     alert(quiz.children[i].question);
-// }
-
-
-// let options = function () {
-//     for (var i = 0; i < quiz.children[1].length; i++) {
-//         let element = document.createElement("li");
-//         element.innerHTML = quiz.children[1].children[i];
-//         alert(element);
-//         choicesList.appendChild(element);
-
-
-//     }
-// }
-
 
 function createList(array) {
     var list = document.createElement("ul");
@@ -88,24 +67,17 @@ function createList(array) {
 
 
 
-
-
-
-
-
-
-
-//start button press
-var startButton = document.querySelector('#start');
-
+// S T A R T I N G    T H E    Q U I Z
 startButton.addEventListener("click", function () {
-    alert("quiz started");
-    timer();
-    hideMenu();
-    // options();
+    // alert("quiz started");
+    timer(); // starts timer
+    hideMenu(); //hides first menu screen
     var list = createList(quiz);
     document.body.appendChild(list);
 })
+
+
+
 
 
 
